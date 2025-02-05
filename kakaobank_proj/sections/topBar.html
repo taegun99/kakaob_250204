@@ -30,7 +30,7 @@
             <div class="dropdown flex-as-c">
                 <button class="dropBtn">
                     <span>관련사이트</span>
-                    <span><i class="fa-solid fa-angle-up"></i></span>
+                    <span><i class="fa-solid fa-angle-down"></i></span>
                 </button>
         </div>
     </div>
@@ -111,13 +111,19 @@
             width: 1080px;
         }
 
-        /* 탑바 */
+        /* 탑바 시작 */
         .top_bar {
             height: 80px;
-            background-color: beige;
+            width: 100%;
+            background-color: #fff;
             font-size: 15px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
         }
 
+        /* 로고 */
         .top_bar .logo_wrap > a{
             width: 116px;
         }
@@ -126,6 +132,30 @@
             width: 100%;
         }
 
+        /* 텍스트 */
+        .top_bar .menu_box > ul > li > a {
+            padding: 0 24px;
+            position: relative;
+        }
+        .top_bar .menu_box > ul > li > a:hover {
+            text-decoration: underline;
+        }
+
+        .top_bar .menu_box > ul > li > a::after {
+            content: "";
+            background-color: #000;
+            width: 100%;
+            height: 2px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            display: none;
+        }
+        
+        .top_bar .menu_box > ul > li:hovergit > a::after {
+            display: block;
+        }
+        /* 관련 사이트 */
         .top_bar .dropdown .dropBtn {
             background: rgba(244,244,244,0.8);
             color: rgba(68,68,68,1);
