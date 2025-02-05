@@ -21,9 +21,9 @@
             <div class="menu_box">
                 <ul class="flex height-100p">
                     <li>
-                        <a href="#" class="flex height-100p flex-ai-c">은행소개</a>
-                        <div class="con_min_widh">
-                            <div class="con menu_box-sec_menu">
+                        <a href="#" class="flex flex-ai-c height-100p">은행소개</a>
+                        <div class="con_min_width">
+                            <div class="menu_box-sec_menu con">
                                 <ul class="flex">
                                     <li>
                                         <a href="#">카카오뱅크</a>
@@ -50,17 +50,15 @@
                                             <li><a href="#" class="block">입찰공고</a></li>
                                         </ul>
                                     </li>
-                                    <li>
-                                        <a href="#">인재영입</a>
-                                    </li>
+                                    <li><a href="#">인재영입</a></li>
                                 </ul>
                             </div>
                         </div>
                     </li>
                     <li>
-                        <a href="#" class="flex height-100p flex-ai-c">IR투자정보</a>
+                        <a href="#" class="flex flex-ai-c height-100p">IR투자정보</a>
                         <div class="con_min_width">
-                            <div class="con menu_box-sec_menu">
+                            <div class="menu_box-sec_menu con">
                                 <ul class="flex">
                                     <li>
                                         <a href="#">공시정보</a>
@@ -107,17 +105,15 @@
                                             <li><a href="#" class="block">주주총회</a></li>
                                         </ul>
                                     </li>
-                                    <li>
-                                        <a href="#">공고</a>
-                                    </li>
+                                    <li><a href="#">공고</a></li>
                                 </ul>
                             </div>
                         </div>
                     </li>
                     <li>
-                        <a href="#" class="flex height-100p flex-ai-c">상품안내</a>
+                        <a href="#" class="flex flex-ai-c height-100p">상품안내</a>
                         <div class="con_min_width">
-                            <div class="con menu_box-sec_menu">
+                            <div class="menu_box-sec_menu con">
                                 <ul class="flex">
                                     <li>
                                         <a href="#">통장/저축</a>
@@ -190,12 +186,12 @@
                                     </li>
                                 </ul>
                             </div>
-                        </div>    
+                        </div>
                     </li>
                     <li>
-                        <a href="#" class="flex height-100p flex-ai-c">고객센터</a>
+                        <a href="#" class="flex flex-ai-c height-100p">고객센터</a>
                         <div class="con_min_width">
-                            <div class="con menu_box-sec_menu">
+                            <div class="menu_box-sec_menu con">
                                 <ul class="flex">
                                     <li>
                                         <a href="#">이용안내</a>
@@ -262,16 +258,26 @@
                                     </li>
                                 </ul>
                             </div>
-                        </div>
-                    </li>
+                        </div>  
+                    </li>                    
                 </ul>
             </div>
-
+            
             <div class="dropdown flex-as-c">
                 <button class="dropBtn">
                     <span>관련사이트</span>
-                    <span><i class="fa-solid fa-angle-down"></i></span>
+                    <span class="ico"><i class="fa-solid fa-angle-down"></i></span>
                 </button>
+
+                <div class="dropdown_content">
+                    <ul>
+                        <li><a href="#">카카오뱅크 AD</a></li>
+                        <li><a href="#">카카오뱅크 인증서</a></li>
+                        <li><a href="#">금융기술연구소</a></li>
+                        <li><a href="#">기술블로그</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -406,6 +412,7 @@
             background-color: #fff;
             padding: 60px 0 36px 0;
             box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.12);
+            border-top: 1px solid rgba(0,0,0,0.1);
         }
 
         
@@ -438,6 +445,10 @@
         }
 
         /* 관련 사이트 */
+        .top_bar .dropdown {
+            position: relative;
+        }
+
         .top_bar .dropdown .dropBtn {
             background: rgba(244,244,244,0.8);
             color: rgba(68,68,68,1);
@@ -454,6 +465,26 @@
             display: inline-block;
             margin-left: 5px;
         }
+        
+        
+        .top_bar .dropdown .dropdown_content {
+            position: absolute;
+            left:0;
+            top: 100%;
+            background-color: #fff;
+            box-shadow: 0 4px 12px 0 rgba(0,0,0,0.12);
+            border-radius: 6px;
+            overflow: hidden;
+            margin-top: 30px;
+            width: 240px;
+        }
+        .top_bar .dropdown .dropdown_content a {
+            font-size: 13px;
+            display: block;
+            padding: 0 24px;
+            line-height: 48px;
+        }
+        /* 탑바 끝 */
     </style>
         
     <script>
