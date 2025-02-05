@@ -6,6 +6,9 @@
     <title>Document</title>
     <!-- 폰트어썸 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- 제이쿼리 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
     <div class="top_bar con_min_width">
@@ -32,8 +35,8 @@
                                             <li><a href="#" class="block">주주사 소개</a></li>
                                             <li><a href="#" class="block">오시는 길</a></li>
                                             <li><a href="#" class="block">제휴문의</a></li>
-                                            <li><a href="#" class="block">금융기술연구소 </a></li>
-                                            <li><a href="#" class="block">카카오뱅크 인증서</a></li>
+                                            <li><a href="#" class="block" target="_blank">금융기술연구소 </a></li>
+                                            <li><a href="#" class="block" target="_blank">카카오뱅크 인증서</a></li>
                                         </ul>
                                     </li>
                                     <li>
@@ -101,7 +104,7 @@
                                         <a href="#">IR일정</a>
                                         <ul>
                                             <li><a href="#" class="block">IR행사</a></li>
-                                            <li><a href="#" class="block">IR미팅예약</a></li>
+                                            <li><a href="#" class="block" target="_blank">IR미팅예약</a></li>
                                             <li><a href="#" class="block">주주총회</a></li>
                                         </ul>
                                     </li>
@@ -264,10 +267,7 @@
             </div>
             
             <div class="dropdown flex-as-c">
-                <button class="dropBtn">
-                    <span>관련사이트</span>
-                    <span class="ico"><i class="fa-solid fa-angle-down"></i></span>
-                </button>
+                <button class="dropBtn">관련사이트</button>
 
                 <div class="dropdown_content">
                     <ul>
@@ -278,17 +278,23 @@
                     </ul>
                 </div>
             </div>
+
+            <div class="flex-as-c">
+                <a href="#" class="global_logo">
+                    <span><img src="/images/icon_eng.svg" alt=""></span>
+                </a>
+            </div>
         </div>
     </div>
 
     <style>
-        /* 노멀라이즈 */
+        /* 노말라이즈 */
         body, ul, li {
-            padding: 0;
             margin: 0;
+            padding: 0;
             list-style: none;
         }
-
+        
         a {
             color: inherit;
             text-decoration: none;
@@ -322,6 +328,7 @@
         .flex-ai-c {
             align-items: center;
         }
+
         .flex-as-c {
             align-self: center;
         }
@@ -352,7 +359,7 @@
         .con_min_width {
             min-width: 1080px;
         }
-
+        
         .con {
             width: 1080px;
         }
@@ -361,28 +368,29 @@
         .top_bar {
             height: 80px;
             width: 100%;
-            background-color: #fff;
+            background-color:#fff;
             font-size: 15px;
             position: fixed;
             top: 0;
             left: 0;
-            border-bottom: 1px solid rgba(0,0,0,0.1);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
         }
-
+        
         /* 로고 */
-        .top_bar .logo_wrap > a{
+        .top_bar .logo_wrap > a {
             width: 116px;
         }
 
-        .top_bar .logo_wrap > a > img{
+        .top_bar .logo_wrap > a > img {
             width: 100%;
         }
 
-        /* 텍스트 */
+        /* 메뉴 박스 */
         .top_bar .menu_box > ul > li > a {
             padding: 0 24px;
             position: relative;
         }
+
         .top_bar .menu_box > ul > li > a:hover {
             text-decoration: underline;
         }
@@ -397,7 +405,7 @@
             left: 0;
             display: none;
         }
-        
+
         .top_bar .menu_box > ul > li:hover > a::after {
             display: block;
         }
@@ -405,90 +413,168 @@
         /* 메뉴 박스 - 2차 메뉴 */
         .top_bar .menu_box > ul > li > div {
             width: 100%;
+            background-color: #fff;
             position: absolute;
             left: 0;
             top: 100%;
-            display: none ;
-            background-color: #fff;
+            display: none;
             padding: 60px 0 36px 0;
             box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.12);
-            border-top: 1px solid rgba(0,0,0,0.1);
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
         }
-
-        
 
         .top_bar .menu_box > ul > li:hover > div {
             display: block;
         }
 
-        .top_bar .menu_box > ul > li .menu_box-sec_menu > ul > li {
+        .top_bar .menu_box .menu_box-sec_menu > ul > li {
             width: calc(100% / 6);
         }
 
         .top_bar .menu_box > ul > li:first-child .menu_box-sec_menu > ul > li {
             width: calc(100% / 4);
         }
-        
-        
-        .top_bar .menu_box > ul > li .menu_box-sec_menu > ul > li > a {
+
+        .top_bar .menu_box .menu_box-sec_menu > ul > li > a {
             display: block;
             margin-bottom: 20px;
             text-align: center;
             font-size: 17px;
         }
 
-        .top_bar .menu_box > ul > li .menu_box-sec_menu > ul ul > li >  a {
+        .top_bar .menu_box .menu_box-sec_menu > ul ul > li > a {
             font-size: 13px;
             color: #444;
             text-align: center;
             margin-bottom: 24px;
         }
 
-        /* 관련 사이트 */
+        .top_bar .menu_box .menu_box-sec_menu ul li a[target="_blank"]::after {
+            content: "";
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            background: url(..//images/svg_line_outlink.svg);
+            background-size: 14px 14px;
+            margin-left: 5px;
+            vertical-align: middle;
+            margin-top: -4px;
+        }
+
+        
+        /* 관련사이트 */
         .top_bar .dropdown {
             position: relative;
         }
-
+        
         .top_bar .dropdown .dropBtn {
-            background: rgba(244,244,244,0.8);
-            color: rgba(68,68,68,1);
+            background: rgba(244, 244, 244, 0.8);
+            color: rgba(68, 68, 68, 1);
             border: 1px solid rgba(229, 229, 229, 0.8);
             padding: 0 14px 0 18px;
             margin: 0 28px 0 14px;
             height: 40px;
             font-size: 15px;
-            border-radius: 40px ;
+            border-radius: 40px;
             cursor: pointer;
         }
 
-        .top_bar .dropdown .dropBtn .ico {
+        /* 이미지 버전 */
+        .top_bar .dropdown .dropBtn::after {
+            content: "";
             display: inline-block;
-            margin-left: 5px;
+            margin-left: 10px;
+            width: 12px;
+            height: 12px;
+            background: url(/images/svg_line_arrow_down.svg);
+            background-size: 12px 12px;
+            transition: transform .3s ease;
         }
-        
-        
+
+        /* 아이콘 버전 
+        .top_bar .dropdown .rotate {
+            transform: rotate(-180deg);
+        }
+        */
+        .top_bar .dropdown .rotate::after {
+            transform: rotate(-180deg);
+        }
+
         .top_bar .dropdown .dropdown_content {
             position: absolute;
-            left:0;
+            left: 0;
             top: 100%;
             background-color: #fff;
-            box-shadow: 0 4px 12px 0 rgba(0,0,0,0.12);
+            box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.12);
             border-radius: 6px;
-            overflow: hidden;
             margin-top: 30px;
             width: 240px;
+            overflow: hidden;
+            visibility: hidden;
+            transform: translateY(4px);
+            transition: all .1s linear;
+            opacity: 0;
         }
+
+        .top_bar .dropdown .is-active {
+            opacity: 1;
+            transform: translateY(0);
+            visibility: visible;
+        }
+
         .top_bar .dropdown .dropdown_content a {
             font-size: 13px;
             display: block;
             padding: 0 24px;
             line-height: 48px;
         }
+
+        .top_bar .dropdown .dropdown_content a:hover {
+            text-decoration: underline;
+            background-color: #f7f7f7;
+        }
+
+        .top_bar .dropdown .dropdown_content a::after {
+            content: "";
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            background: url(..//images/svg_line_outlink.svg);
+            background-size: 12px 12px;
+            margin-left: 8px;
+            vertical-align: middle;
+            margin-top: -4px;
+        }
+
+        /* 글로벌 로고 */
+        .top_bar .global_logo {
+            display: inline-block;
+            width: 20px;
+        }
+
+        .top_bar .global_logo > span > img {
+            width: 100%;
+            display: block;
+        }
+
+        .top_bar .global_logo:hover > span > img {
+            opacity: .3;
+        }
         /* 탑바 끝 */
     </style>
         
     <script>
-
+        $('.dropBtn').click(function(){
+            var dropdownContent = $('.dropdown_content');
+            if(dropdownContent.hasClass('is-active')){
+                dropdownContent.removeClass('is-active');
+                $(this).removeClass('rotate');
+            }
+            else {
+                dropdownContent.addClass('is-active');
+                $(this).addClass('rotate');
+            }
+        })
     </script>
 </body>
 </html>
