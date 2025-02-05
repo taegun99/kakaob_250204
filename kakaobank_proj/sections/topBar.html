@@ -20,10 +20,22 @@
 
             <div class="menu_box">
                 <ul class="flex height-100p">
-                    <li><a href="#" class="flex height-100p flex-ai-c">은행소개</a></li>
-                    <li><a href="#" class="flex height-100p flex-ai-c">IR투자정보</a></li>
-                    <li><a href="#" class="flex height-100p flex-ai-c">상품안내</a></li>
-                    <li><a href="#" class="flex height-100p flex-ai-c">고객센터</a></li>
+                    <li>
+                        <a href="#" class="flex height-100p flex-ai-c">은행소개</a>
+                        <ul></ul>
+                    </li>
+                    <li>
+                        <a href="#" class="flex height-100p flex-ai-c">IR투자정보</a>
+                        <ul></ul>
+                    </li>
+                    <li>
+                        <a href="#" class="flex height-100p flex-ai-c">상품안내</a>
+                        <ul></ul>
+                    </li>
+                    <li>
+                        <a href="#" class="flex height-100p flex-ai-c">고객센터</a>
+                        <ul></ul>
+                    </li>
                 </ul>
             </div>
 
@@ -155,6 +167,35 @@
         .top_bar .menu_box > ul > li:hover > a::after {
             display: block;
         }
+
+        /* 메뉴 박스 - 2차 메뉴 */
+        .top_bar .menu_box > ul > li > ul {
+            width: 100%;
+            height: 200px;
+            background-color: pink;
+            position: absolute;
+            left: 0;
+            top: 100%;
+            display: nonegit ;
+        }
+
+        .top_bar .menu_box > ul > li:nth-child(2) > ul {
+            background-color: skyblue;
+        }
+
+        .top_bar .menu_box > ul > li:nth-child(3) > ul {
+            background-color: grey;
+        }
+
+        .top_bar .menu_box > ul > li:nth-child(4) > ul {
+            background-color: thistle;
+        }
+
+        .top_bar .menu_box > ul > li:hover > ul {
+            display: block;
+        }
+
+
         /* 관련 사이트 */
         .top_bar .dropdown .dropBtn {
             background: rgba(244,244,244,0.8);
