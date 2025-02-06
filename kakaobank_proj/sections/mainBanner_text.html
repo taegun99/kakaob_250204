@@ -20,12 +20,19 @@
                 당신의 모든 일이 바뀌고 있습니다.
             </p>
             <ul class="btns flex">
-                <li><a href="#">Google Play</a></li>
-                <li><a href="#">App Store</a></li>
+                <li>
+                    <a href="#">
+                        <span class="ico ico_1"></span>
+                        <span>Google Play</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="ico ico_2"></span>
+                        <span>App Store</span>
+                    </a>
+                </li>
             </ul>
-           
-
-
         </div>
     </div>
 
@@ -106,6 +113,16 @@
             width: 1080px;
         }
 
+        .ico {
+            background-color: white;
+            width: 24px;
+            height: 24px;
+            display: inline-block;
+            background-image: url(https://www.kakaobank.com/static/images/web/img_kabang_220615.png);
+        }
+
+        
+
         /* 메인 배너 시작 */
         .main_banner {
             background-color: #ffef6b;
@@ -147,7 +164,25 @@
             line-height: 56px;
             color: #333;
             background: #fff;
-            text-align: center;        
+            display: flex;
+            justify-content: center;
+            align-items: center;        
+        }
+
+        .main_banner .text_box > .btns .ico {
+            margin-right: 10px;
+        }
+
+        .main_banner > .text_box > .btns > li:hover > a {
+            text-decoration: underline;
+        }
+        
+        .main_banner .text_box > .btns .ico_1 {
+            background-position: -341px -292px;
+        }
+
+        .main_banner .text_box > .btns .ico_2 {
+            background-position: -371px -292px;
         }
         /* 메인 배너 끝 */
     </style>
