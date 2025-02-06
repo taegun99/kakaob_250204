@@ -6,8 +6,9 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="main_banner con_min_width border-red">
-        <div class="con img-box border-blue">
+    <div class="main_banner con_min_width">
+        <div class="bg"></div>
+        <div class="con img-box">
             <img src="../images/main-bg3.png" alt="">
         </div>
     </div>
@@ -91,6 +92,16 @@
 
         /* 메인 베너 시작 */
         .main_banner {
+            position: relative;
+        }
+
+        .main_banner .bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 648px;
+            z-index: -1;
             background-color: #ffef6b;
         }
         /* 메인 베너 끝 */
