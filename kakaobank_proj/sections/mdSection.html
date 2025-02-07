@@ -4,11 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
     <section class="md_sec md_sec_1 con">
-        <div></div>
-        <div></div>
+        <div>
+            <div class="img-box">
+                <img src="/images/main-withdrawal.png" alt="">
+            </div>
+        </div>
+        <div>
+            <div class="txt_box">
+                <h3>모바일로 더 손쉬운
+                    <br>
+                    계좌개설, 간편한 이체
+                </h3>
+                <p>
+                    인증서, OTP 없이 계좌 개설이 간편합니다.
+                    <br>
+                    여러 건의 이체도 몇 번의 터치로 손쉽게 보낼 수 있습니다.
+                </p>
+                <div class="btn_box">
+                    <a href="#">
+                        카카오뱅크 입출금통장
+                        <img src="/images/home_arr.png" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
     </section>
 
     <div class="md_divider"></div>
@@ -34,7 +57,15 @@
         <div></div>
         <div></div>
     </section>
+    
+    
     <style>
+        /* 폰트 적용 */
+        html {
+        /* 영문이면 roboto가 적용되고, 한글이면 Noto Sans KR가 적용되도록 아래와 같은 순서로 배치 */
+            font-family: "Roboto", "Noto Sans KR", sans-serif;
+        }
+
         /* 노말라이즈 */
         body, ul, li {
             margin: 0;
@@ -124,26 +155,69 @@
         }
 
         /* 중간섹션 시작 */
+        /* 공통섹션 시작 */
         .md_sec {
             min-height: 500px;
-            border: 10px solid red;
             display: flex;
         }
 
         .md_sec > div:first-child {
-            background-color: pink;
             width: 50%;
         }
 
         .md_sec > div:last-child {
-            background-color: bisque;
             flex-grow: 1;
+            display: flex;
+            align-items: center;
         }
 
         .md_divider{
             height: 32px;
             background-color: #fafafa;
         }
+        /* 공통섹션 끝 */
+
+        /* 섹션1 시작 */
+        .md_sec .img-box {
+            width: 473px;
+        }
+
+        .md_sec .txt_box  h3  {
+            font-size: 40px;
+            line-height: 1.3;
+            margin: 0;
+        }
+
+        .md_sec .txt_box p {
+            margin-top: 24px;
+            font-size: 15px;
+            line-height: 1.7;
+            color: #666;
+        }
+        
+        .md_sec .txt_box .btn_box {
+            margin-top: 35px;
+        }
+
+        .md_sec .txt_box .btn_box a {
+            background-color: #f6f6f6;
+            width: 250px;
+            height: 56px;
+            font-size: 16px;
+            line-height: 56px;
+            color: #333;
+            display: flex;
+            border-radius: 10px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .md_sec .txt_box .btn_box a img {
+            width: 6px;
+            height: 9px;
+            margin: -2px 0 0 8px;
+        }
+
         /* 중간섹션 끝 */
     </style>
 </body>
