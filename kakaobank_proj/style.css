@@ -78,3 +78,11 @@ a {
 .con {
     width: 1080px;
 }
+
+.ico {
+    background-color: white;
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    background-image: url(/images/img_kabang_220615.png);
+}
